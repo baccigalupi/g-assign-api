@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_with_basic
 
+  attr_reader :authenticator
+
   def authenticate_with_basic
     authenticate_or_request_with_http_basic do |username, password|
-      authenticator = Authenticate.new(username, password)
+      @authenticator = Authenticate.new(username, password)
       session[:instructor] = authenticator.instructor?
       authenticator.valid?
     end
