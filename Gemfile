@@ -10,3 +10,8 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+# heroku stuff
+group :production do
+  gem 'rails_12factor'
+end
