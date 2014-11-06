@@ -10,6 +10,7 @@ class AssignmentsSerializer < Struct.new(:collection)
   class AssignmentSerializer < Struct.new(:model)
     def as_json
       {
+        id: model.id,
         name: model.name,
         type: model.type,
         location: "git@github.com:#{model.location}",
