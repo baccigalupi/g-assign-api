@@ -12,6 +12,6 @@ group :development, :test do
 end
 
 # heroku stuff
-# group :production do
+group :production do
   gem 'rails_12factor'
-# end
+end
