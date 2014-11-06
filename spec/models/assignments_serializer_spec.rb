@@ -24,7 +24,7 @@ describe AssignmentsSerializer do
   end
 
   it "transforms the location" do
-    expect(serialized.first[:location]).to match(/git:\/\/git@github.com:/)
+    expect(serialized.first[:location]).to match(/^git@github.com:/)
     expect(serialized.first[:location]).to include(collection.first[:location])
   end
 end
