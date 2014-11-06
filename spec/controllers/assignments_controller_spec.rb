@@ -20,7 +20,7 @@ describe AssignmentsController, type: :controller do
       it "does not create a new Assignment" do
         expect(Assignment).not_to receive(:create)
 
-        post :create, assignment: valid_attributes
+        post :create, valid_attributes
       end
     end
 
@@ -38,7 +38,7 @@ describe AssignmentsController, type: :controller do
           due_on: valid_attributes[:due_on].to_s
         })
 
-        post :create, assignment: valid_attributes
+        post :create, valid_attributes
       end
     end
   end

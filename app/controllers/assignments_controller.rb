@@ -8,7 +8,7 @@ class AssignmentsController < ApplicationController
     render json: {status: 400} and return unless authenticator.instructor?
 
     assignment = Assignment.create(
-      params[:assignment].permit(:name, :type, :location, :assigned_on, :due_on)
+      params.permit(:name, :type, :location, :assigned_on, :due_on)
     )
 
     render json: {status: 200}

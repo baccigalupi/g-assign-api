@@ -6,14 +6,14 @@ require 'date'
 
 describe AssignmentsSerializer do
   let(:serializer) { AssignmentsSerializer.new(collection) }
-  let(:keys) { [:name, :type, :location, :assigned_on, :due_on] }
+  let(:keys) { [:id, :name, :type, :location, :assigned_on, :due_on] }
 
   let(:collection) {
-    Exercise = Struct.new(*keys) unless defined?(Exercise)
+    AssignmentStruct = Struct.new(*keys) unless defined?(AssignmentStruct)
 
     [
-      Exercise.new('The Joy of Arrays', :exercise, 'g5-gschool/joy-of-arrays', Date.parse("1/1/2014"), Date.parse("1/2/2014")),
-      Exercise.new('Hash Clininc', :assessment, 'g5-gschool/hash-clinic', Date.parse("1/2/2014"), Date.parse("1/5/2014"))
+      AssignmentStruct.new(22, 'The Joy of Arrays', :exercise, 'g5-gschool/joy-of-arrays', Date.parse("1/1/2014"), Date.parse("1/2/2014")),
+      AssignmentStruct.new(15, 'Hash Clininc', :assessment, 'g5-gschool/hash-clinic', Date.parse("1/2/2014"), Date.parse("1/5/2014"))
     ]
   }
 

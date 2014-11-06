@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105155952) do
+ActiveRecord::Schema.define(version: 20141106153629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20141105155952) do
     t.string   "location"
     t.date     "assigned_on"
     t.date     "due_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "submissions", force: true do |t|
+    t.string   "github_name"
+    t.integer  "assignment_id"
+    t.datetime "submitted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
