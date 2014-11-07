@@ -9,9 +9,9 @@ class SubmissionsController < ApplicationController
 
   def create
     submission = Submission.create(
-      params.permit(:assignment_id, :github_name).merge(submitted_at: Time.now)
+      params.permit(:assignment_id, :github_name, :location).merge(submitted_at: Time.now)
     )
 
-    render json: {status: 200}
+    render json: {status: submission.new_record? ? 400 : 200}
   end
 end

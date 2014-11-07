@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141106153629) do
 
   create_table "submissions", force: true do |t|
     t.string   "github_name"
+    t.string   "location"
     t.integer  "assignment_id"
     t.datetime "submitted_at"
     t.datetime "created_at"

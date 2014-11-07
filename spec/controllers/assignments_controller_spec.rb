@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe AssignmentsController, type: :controller do
+  let(:assignment) { double(new_record?: true) }
+
   describe '#create' do
     let(:valid_attributes) {
       {
@@ -36,7 +38,7 @@ describe AssignmentsController, type: :controller do
           location: valid_attributes[:location],
           assigned_on: valid_attributes[:assigned_on].to_s,
           due_on: valid_attributes[:due_on].to_s
-        })
+        }).and_return(assignment)
 
         post :create, valid_attributes
       end
