@@ -1,6 +1,8 @@
 class AssignmentsController < ApplicationController
   def index
-    serializer = AssignmentsSerializer.new(Assignment.all)
+    serializer = AssignmentsSerializer.new(
+      AssignmentsFinder.new(params).results
+    )
     render json: serializer
   end
 
