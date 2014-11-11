@@ -4,14 +4,14 @@ require_relative "../../app/models/submissions_serializer"
 
 describe SubmissionsSerializer do
   let(:serializer) { SubmissionsSerializer.new(collection) }
-  let(:keys) { [:id, :github_name, :assignment_id] }
+  let(:keys) { [:id, :github_name, :location, :assignment_id, :submitted_at] }
 
   let(:collection) {
     SubmissionStub = Struct.new(*keys) unless defined?(SubmissionStub)
 
     [
-      SubmissionStub.new(22, 'jfoley', 234),
-      SubmissionStub.new(15, 'marthaberner', 456)
+      SubmissionStub.new(22, 'jfoley', 'git@github.com:jfoley/foo', 234, Time.now),
+      SubmissionStub.new(15, 'marthaberner', 'git@github.com:marthaberner/foo', 456, Time.now - 3600)
     ]
   }
 

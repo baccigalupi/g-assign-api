@@ -13,7 +13,7 @@ class AssignmentsSerializer < Struct.new(:collection)
         id: model.id,
         name: model.name,
         type: model.type,
-        location: "git@github.com:#{model.location}",
+        location: model.location,
         assigned_on: model.assigned_on,
         due_on: model.due_on
       }

@@ -3,8 +3,8 @@ require 'rails_helper'
 describe SubmissionsFinder do
   let(:finder) { SubmissionsFinder.new(params) }
 
-  let!(:submission_1) { Submission.create(github_name: 'jfoley', location: 'jfoley/foo', assignment_id: 33, submitted_at: Time.now - 3.days) }
-  let!(:submission_2) { Submission.create(github_name: 'marthaberner', location: 'marthaberner/bar', assignment_id: 22, submitted_at: Time.now - 1.day) }
+  let!(:submission_1) { Submission.create(github_name: 'jfoley', location: 'git@github.com:jfoley/foo', assignment_id: 33, submitted_at: Time.now - 3.days) }
+  let!(:submission_2) { Submission.create(github_name: 'marthaberner', location: 'git@github.com:marthaberner/bar', assignment_id: 22, submitted_at: Time.now - 1.day) }
 
   context 'when no params are involved' do
     let(:params) { {} }

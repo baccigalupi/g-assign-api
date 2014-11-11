@@ -12,7 +12,9 @@ class SubmissionsSerializer < Struct.new(:collection)
       {
         id: model.id,
         github_name: model.github_name,
-        assignment_id: model.assignment_id
+        location: model.location,
+        assignment_id: model.assignment_id,
+        submitted_at: model.submitted_at
       }
     end
   end
