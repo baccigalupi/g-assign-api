@@ -1,22 +1,5 @@
-class AssignmentsSerializer < Struct.new(:collection)
-  def as_json
-    collection.map{|model| AssignmentSerializer.new(model).as_json }
-  end
-
-  def to_json(*args)
-    as_json.to_json
-  end
-
-  class AssignmentSerializer < Struct.new(:model)
-    def as_json
-      {
-        id: model.id,
-        name: model.name,
-        type: model.type,
-        location: model.location,
-        assigned_on: model.assigned_on,
-        due_on: model.due_on
-      }
-    end
+class AssignmentsSerializer < CollectionSerializer
+  def keys
+    [:id, :name, :type, :location, :assigned_on, :due_on]
   end
 end
